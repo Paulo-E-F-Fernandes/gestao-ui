@@ -1,5 +1,6 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  pageName : string = 'Page-Name';
+  pageName: string;
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.pageName = 'Gestão de Alertas';
+  }
 
 }

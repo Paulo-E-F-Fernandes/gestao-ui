@@ -1,18 +1,12 @@
 <div class="container-fluid">
+  
   <div class="row mt-sm-2">
-
     <div class="col-sm-12">
-
-
-      <p-table [columns]="colunas" [value]="alertas" [paginator]="true" [rows]="5" [responsive]="true" [resizableColumns]="true">
-        <!-- <ng-template pTemplate="colgroup" let-columns>
-          <colgroup>
-            <col *ngFor="let col of columns" [style.width]="col.width">
-          </colgroup>
-        </ng-template> -->
+      <p-table #dt [columns]="colunas" [value]="alertas" [paginator]="true" [rows]="5" [responsive]="true" [resizableColumns]="true">
         <ng-template pTemplate="caption">
-          Lista de alertas
-        </ng-template>
+          {{ alertaCaption }}
+        </ng-template><!-- ./caption -->
+
         <ng-template pTemplate="header" let-columns>
           <tr class="text-center">
             <th *ngFor="let col of columns" [pSortableColumn]="col.field" pResizableColumn>
@@ -20,26 +14,54 @@
               <p-sortIcon [field]="col.field"></p-sortIcon>
             </th>
           </tr>
-        </ng-template>
+          <tr>
+            <th *ngFor="let col of columns" [ngSwitch]="col.field">
+              <input *ngSwitchCase="'pontoDeVenda'" class="form-control" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+              <input *ngSwitchCase="'descricao'" class="form-control" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            </th>
+          </tr>
+        </ng-template><!-- ./header -->
+        
         <ng-template pTemplate="body" let-rowData let-columns="columns">
           <tr>
-            <td *ngFor="let col of columns" class="ui-resizable-column">
+            <td *ngFor="let col of columns" class="ui-resizable-column" [ngSwitch]="col.field">
               <span class="ui-column-title">{{col.header}}</span>
-              {{ rowData[col.field] }}
+              <!-- Caso for o campo de 'produto' -->
+              <ng-template [ngSwitchCase]="'produto'">
+                <!-- Exibe o produto se existir -->
+                <div *ngIf="rowData[col.field]; else exibeCategoria">
+                  {{ rowData[col.field] }}
+                </div>
+                <!-- Caso contrário, exibe a categoria -->
+                <ng-template #exibeCategoria>
+                  {{ rowData.categoria }}
+                </ng-template>
+              </ng-template>
+
+              <!-- Caso for o campo de 'margem' -->
+              <ng-template [ngSwitchCase]="'margem'">
+                <div class="text-center">
+                    {{ rowData[col.field] }}
+                </div>
+              </ng-template>
+              
+              <!-- Para os demais campos -->
+              <ng-template ngSwitchDefault>
+                {{ rowData[col.field] }}
+              </ng-template>
             </td>
           </tr>
-        </ng-template>
+        </ng-template><!-- ./body -->
+
         <ng-template pTemplate="emptymessage" let-columns>
           <tr class="text-center">
             <td [attr.colspan]="columns.length">
-              Nenhum registro encontrado!
+              {{ semRegistro }}
             </td>
           </tr>
-        </ng-template>
+        </ng-template><!-- ./emptymessage -->
       </p-table>
-
     </div><!-- ./col-sm-12 -->
-
-  </div>
+  </div><!-- ./row -->
   
-</div>
+</div><!-- ./container-fluid -->

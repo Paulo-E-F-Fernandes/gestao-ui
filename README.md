@@ -1,15 +1,6 @@
-# Projeto Template-UI
+# Projeto Gestão-UI
 
-* Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8, através do comando `ng new template-ui`.
-
----
-## Tecnologias
-
-* Este projeto foi estruturado para utilizar as seguintes tecnologias:
-
-	* [Angular 6](https://angular.io/);
-	* [PrimeNG](https://www.primefaces.org/primeng/#/);
-	* [Bootstrap4](https://getbootstrap.com/).
+* Este projeto foi gerado a partir do projeto `Template-UI`, um projeto base escrito em [Angular 6](https://angular.io/), [PrimeNG](https://www.primefaces.org/primeng/#/) e [Bootstrap4](https://getbootstrap.com/) que criei, e continua em evolução, para servir como base para os meus projetos pessoais e um projeto para experimentos e aprendizado.
 
 ---
 ## Pré-requisitos

@@ -1,3 +1,4 @@
+// Angular
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
@@ -8,9 +9,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent {
   
-  public constructor (private titleService : Title) {
-    let pageTitle = 'Page Title'; 
-    this.titleService.setTitle(pageTitle);
+  public constructor (private titleService: Title) {
+    let nomePagina = 'Gestão de Alertas';
+    this.titleService.setTitle(nomePagina);
   }
 
 }

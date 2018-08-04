@@ -11,8 +11,8 @@ import { TableModule } from 'primeng/table';
 // Aplicação
 import { AlertaService } from './services/alerta.service';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ListagemComponent } from './listagem/listagem.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [

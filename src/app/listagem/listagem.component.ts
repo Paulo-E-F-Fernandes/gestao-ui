@@ -10,21 +10,24 @@ import { Alerta } from '../domain/alerta';
 export class ListagemComponent implements OnInit {
 
   alertas: Alerta[];
+  alertaCaption: string;
   colunas: any[];
   loading: boolean;
+  semRegistro: string;
 
-  constructor(private alertaService: AlertaService) { }
+  constructor(private alertaService: AlertaService) {
+    this.alertaCaption = 'Lista de alertas';
+    this.semRegistro = 'Nenhum registro encontrado!'
+  }
   
   ngOnInit() {
     this.listarAlertas();
 
     this.colunas = [
-      { field: 'produto', header: 'Produto', width: '30%' },
-      { field: 'categoria', header: 'Categoria', width: '12%' },
-      { field: 'flagTipo', header: 'Tipo', width: '6%' },
-      { field: 'descricao', header: 'Descrição', width: '24%' },
-      { field: 'pontoDeVenda', header: 'Ponto de Venda', width: '20%' },
-      { field: 'margem', header: 'Margem', width: '8%' }
+      { field: 'pontoDeVenda', header: 'Ponto de Venda' },
+      { field: 'produto', header: 'Produto/Categoria' },
+      { field: 'descricao', header: 'Descrição' },
+      { field: 'margem', header: 'Margem' }
     ];
   }
 
