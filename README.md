@@ -1,6 +1,6 @@
 # Projeto Gestão-UI
 
-* Este projeto foi gerado a partir do projeto `Template-UI`, um projeto base escrito em [Angular 6](https://angular.io/), [PrimeNG](https://www.primefaces.org/primeng/#/) e [Bootstrap4](https://getbootstrap.com/) que criei, e continua em evolução, para servir como base para os meus projetos pessoais e um projeto para experimentos e aprendizado.
+* Este projeto foi gerado a partir de um outro projeto meu, o `Template-UI`, um projeto escrito em [Angular 6](https://angular.io/), [PrimeNG](https://www.primefaces.org/primeng/#/) e [Bootstrap4](https://getbootstrap.com/) e que continua em evolução, e o mesmo serve como base para os meus projetos pessoais, para experimentos e aprendizado.
 
 ---
 ## Pré-requisitos
@@ -13,43 +13,14 @@
 ---
 ## Configuração do ambiente
 
-* Clonar os fontes do repositório *git* via **ssh** `git clone git@bitbucket.org:pauloeffernandes/template-ui.git` **OU** **https** `git clone https://pauloeffernandes@bitbucket.org/pauloeffernandes/template-ui.git`;
-* Entrar no diretório **template-ui** que foi criado após o clone do repositório, abrir um terminal neste diretório e executar o comando `npm install`, com isso o diretório **node_modules** é criado com as dependências do projeto;
+* Clonar os fontes do repositório *git* via **ssh** `git@github.com:Paulo-E-F-Fernandes/gestao-ui.git` **OU** **https** `https://github.com/Paulo-E-F-Fernandes/gestao-ui.git`;
+* Entrar no diretório **gestao-ui** que foi criado após o clone do repositório, abrir um terminal neste diretório e executar o comando `npm install`, com isso o diretório **node_modules** é criado com as dependências do projeto;
 * Após a execução do **npm install** já é possível iniciar o servidor com o comando `ng serve`;
-* Importar o projeto no *Visual Studio Code*, para isso, após abrir a *IDE*, selecionar *File* > *Open Folder...* e selecionar o diretório do **template-ui**;
-* Após importado o projeto, para facilitar podemos abrir um terminal dentro da *IDE*, através do menu *View* > *Integrated Terminal*
 
 ---
 ## Servidor de desenvolvimento
 
 * Para executar o servidor de desenvolvimento é só executar no terminal o comando `ng serve`, com isso a aplicação será publicada em um servidor *Node*. Para acessar a aplicação é só colocar a URL `http://localhost:4200/` no browser.
-
-	**OBS.:** Qualquer alteração nos códigos fontes da aplicação será automaticamente recarregada no browser.
-
----
-## Comandos para criar os artefatos
-
-* Para gerar um novo componente execute o comando `ng g c [NOME_COMPONENTE]`.
-* Para gerar um novo serviço execute o comando `ng g s services/[NOME_DIRETÓRIO]/[NOME_SERVIÇO]`.
-	
-	**OBS.:** Para que o *Angular CLI* não gere o arquivo de teste, precisa adicionar o parâmetro `--spec=false`, por exemplo `ng g c [NOME_COMPONENTE] --spec=false`.
-
-* Para gerar uma nova classe execute o comando `ng generate class [NOME_DIRETÓRIO]/[NOME_CLASSE]`.
-
-	* Criar as classes que representam as entidades no diretório **domain**.
-	* Criar as classes relativas a internacionalização no diretório **i18n**. 
-
-## Configurações da aplicação
-* Alterar ***favicon.ico***:
-	* Substituir o arquivo ***favicon.ico*** localizado em ***src/***. Este arquivo é referenciado no ***index.html***.
-* Alterar o logo da aplicação:
-	* Substituir o arquivo ***logo.png*** localizado em ***src*/*assets*/*img***. O logo é utilizado em na variável ***pageLogo*** do arquivo ***navbar.component.ts***, localizado em ***src*/*app*/*navbar*/**.
-* **Cores** da aplicação:
-	* Utilizar o arquivo ***styles.css*** localizado em ***src/***.
-
----
-# Story Board
-* [Trello](https://trello.com/b/3LxDAX2z/projeto-template)
 
 ---
 # Opções de execução
@@ -57,16 +28,6 @@
 ## Build da aplicação
 
 * Executar o comando `ng build` para buildar o projeto. O artefato gerado será armazenado no diretório `dist/`. Usar a *flag* `--prod` para gerar a aplicação de produção.
-
----
-## Executar os testes unitários
-
-* Para executar os teste unitários execute o comando `ng test`. Será executado os testes via [Karma](https://karma-runner.github.io).
-
----
-## Executar os testes *end-to-end*
-
-* Para executar testes *end-to-end*, execute o comando `ng e2e`. Será executado os testes via [Protractor](http://www.protractortest.org/).
 
 ---
 # Ajuda
