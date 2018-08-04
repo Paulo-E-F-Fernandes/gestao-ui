@@ -11,6 +11,7 @@ export class ListagemComponent implements OnInit {
 
   alertas: Alerta[];
   colunas: any[];
+  loading: boolean;
 
   constructor(private alertaService: AlertaService) { }
   
@@ -18,12 +19,12 @@ export class ListagemComponent implements OnInit {
     this.listarAlertas();
 
     this.colunas = [
-      { field: 'produto', header: 'Produto' },
-      { field: 'categoria', header: 'Categoria' },
-      { field: 'flagTipo', header: 'Tipo' },
-      { field: 'descricao', header: 'Descrição' },
-      { field: 'pontoDeVenda', header: 'Ponto de Venda' },
-      { field: 'margem', header: 'Margem' }
+      { field: 'produto', header: 'Produto', width: '30%' },
+      { field: 'categoria', header: 'Categoria', width: '12%' },
+      { field: 'flagTipo', header: 'Tipo', width: '6%' },
+      { field: 'descricao', header: 'Descrição', width: '24%' },
+      { field: 'pontoDeVenda', header: 'Ponto de Venda', width: '20%' },
+      { field: 'margem', header: 'Margem', width: '8%' }
     ];
   }
 

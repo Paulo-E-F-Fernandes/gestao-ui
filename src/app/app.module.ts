@@ -1,37 +1,37 @@
 // Angular
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 // PrimeNG
 import { ButtonModule } from 'primeng/button';
-import { SidebarModule } from 'primeng/sidebar';
+import { TableModule } from 'primeng/table';
 
-// Application
+// Aplicação
+import { AlertaService } from './services/alerta.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NavbarMenuComponent } from './navbar-menu/navbar-menu.component';
-import { NavbarSidebarComponent } from './navbar-sidebar/navbar-sidebar.component';
-import { LoginComponent } from './login/login.component';
+import { ListagemComponent } from './listagem/listagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    NavbarMenuComponent,
-    NavbarSidebarComponent,
-    LoginComponent
+    ListagemComponent
   ],
   imports: [
     // Angular
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
 
     // PrimeNG
     ButtonModule,
-    SidebarModule
+    TableModule
   ],
   providers: [
+    AlertaService,
     Title
   ],
   bootstrap: [AppComponent]
